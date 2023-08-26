@@ -1,0 +1,230 @@
+main {
+    padding: 2.5rem 1.5rem 0;
+    text-align: center;
+    background-color: var(--light-blue);
+}
+
+main .hero,
+.hero .hero-text,
+.hero .hero-text .info {
+    display: flex;
+    flex-direction: column;
+}
+
+main .hero {
+    row-gap: 5rem;
+}
+
+.hero .hero-text {
+    row-gap: 1.5rem;
+}
+
+.hero .hero-text h2 {
+    font-family: Kaushan Script;
+    font-size: 1.3rem;
+    font-weight: normal;
+}
+
+.hero .hero-text h1,
+.hero .hero-banner {
+    align-self: center;
+    position: relative;
+}
+
+.hero .hero-text h1 {
+    width: 18.75rem;
+    z-index: 1;
+    font-size: 2.3rem;
+}
+
+.hero h1 .season {
+    width: 8.5rem;
+    position: absolute;
+    top: -0.13rem;
+    justify-content: center;
+    color: var(--orange);
+}
+
+.hero h1 span {
+    margin-left: 7.5rem;
+}
+
+.hero .hero-text p {
+    font-size: 0.9rem;
+}
+
+.hero .hero-text .info {
+    align-items: center;
+    row-gap: 1.25rem;
+}
+
+.hero .info .phone-info {
+    display: flex;
+    column-gap: 0.7rem;
+}
+
+.hero .info i.fa-phone-volume {
+    font-size: 1.2rem;
+    color: var(--orange);
+}
+
+.hero .info .phone-number {
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.hero .hero-banner {
+    max-width: 20rem;
+}
+
+.hero .hero-banner img {
+    width: 100%;
+}
+
+.hero .hero-banner h1 {
+    position: absolute;
+    right: -8rem;
+    bottom: 10rem;
+    font-size: 3rem;
+    color: var(--white);
+    text-shadow:
+        1.5px 1.5px 0 var(--orange),
+        -1.5px 1.5px 0 var(--orange),
+        -1.5px -1.5px 0 var(--orange),
+        1.5px -1.5px 0 var(--orange)
+    ;
+    transform: rotate(-90deg);
+}
+
+.hero .shapes .orange-circles,
+.hero .shapes .shirt-icon {
+    display: none;
+}
+
+
+
+/* media queries */
+
+@media screen and (min-width: 576px) {
+    main .hero {
+        position: relative;
+    }
+    .hero .shapes .orange-circles {
+        display: block;
+    }
+    .hero .orange-circles * {
+        border: 1px solid var(--orange);
+        border-radius: 50%;
+        position: absolute;
+    }
+    .hero .orange-circles :nth-child(odd) {
+        width: 45px;
+        height: 45px;
+    }
+    .hero .orange-circles :nth-child(even) {
+        width: 35px;
+        height: 35px;
+    }
+    .hero .orange-circles :nth-child(1) {
+        top: 0;
+        left: 5%;
+    }
+    .hero .orange-circles :nth-child(2) {
+        top: 40px;
+        left: 80%;
+    }
+    .hero .orange-circles :nth-child(3) {
+        top: 210px;
+        left: 85%;
+    }
+    .hero .orange-circles :nth-child(4) {
+        top: 430px;
+        left: 5%;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    main .hero {
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .hero .orange-circles :nth-child(2),
+    .hero .orange-circles :nth-child(3) {
+        left: 40%;
+    }
+    .hero .shapes .shirt-icon {
+        display: block;
+    }
+    .hero .shapes .shirt-icon {
+        position: absolute;
+        top: -32px;
+        left: 85%;
+        transform-origin: center -20px;
+        animation: swing 2s ease-in-out infinite alternate;
+    }
+    @keyframes swing {
+        from {
+            transform: rotate(15deg);
+        }
+        to {
+            transform: rotate(-15deg);
+        }
+    }
+    .hero .shapes i.fa-shirt {
+        padding: 10px;
+        font-size: 35px;
+        box-shadow: 0 0 10px var(--orange);
+    }
+    .hero .shapes .shirt-icon:after {
+        content: '';
+        width: 20px;
+        height: 20px;
+        border: 1px solid var(--black);
+        border-right: none;
+        border-bottom: none;
+        position: absolute;
+        top: -11px;
+        left: 22px;
+        transform: rotate(45deg);
+    }
+}
+
+@media screen and (min-width: 992px) {
+    main {
+        padding: 40px 80px;
+        text-align: left;
+    }
+    .hero .hero-text {
+        width: 50%;
+    }
+    .hero .hero-text h2 {
+        font-size: 30px;
+    }
+    .hero .hero-text h1 {
+        align-self: flex-start;
+        font-size: 60px;
+    }
+    .hero h1 span {
+        margin-left: 210px;
+    }
+    .hero .hero-text .info {
+        margin-top: 25px;
+        flex-direction: row;
+        column-gap: 40px;
+    }
+    .hero .hero-text .shop-now-btn {
+        width: 160px;
+        height: 55px;
+    }
+    .hero .orange-circles :nth-child(2) {
+        left: 35%;
+    }
+    .hero .orange-circles :nth-child(4) {
+        top: 465px;
+        left: 22%;
+    }
+    .hero .shapes .shirt-icon {
+        top: -27px;
+    }
+}

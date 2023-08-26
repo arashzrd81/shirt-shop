@@ -1,0 +1,65 @@
+/* global styles */
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Inter;
+}
+
+html {
+    --white: white;
+    --black: black;
+    --light-gray: #d9d9d9;
+    --dark-gray: #888888;
+    --light-blue: #eaf2ff;
+    --orange: #F94D1C;
+}
+
+a,
+button {
+    all: unset;
+    border-radius: 7px;
+    cursor: pointer;
+    text-align: center;
+    font-weight: 600;
+}
+
+button {
+    width: min(60%, 210px);
+    height: 50px;
+    color: var(--white);
+    background-color: var(--orange);
+}
+
+i.fa-shirt {
+    font-size: 2.5rem;
+    color: var(--orange);
+}
+
+.container > * > * {
+    max-width: 1447px;
+    margin: 0 auto;
+}
+
+
+
+/* media queries */
+
+@media screen and (min-width: 576px) {
+    html {
+        font-size: 17px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    html {
+        font-size: 18px;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    html {
+        font-size: 19px;
+    }
+}
