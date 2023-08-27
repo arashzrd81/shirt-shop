@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import { CartContext } from "../../context/CartProvider";
 import { Link } from "react-router-dom";
 import "../../assets/styles/Header.css";
 
 
 const Header = () => {
 
+    const {state: {shirtsCount, totalPurchase}} = useContext(CartContext);
     const [showNavbar, setShowNavbar] = useState(false);
 
     return (
@@ -17,8 +19,8 @@ const Header = () => {
                 <div className="right-part">
                     <div className="cart">
                         <i className="fa-solid fa-cart-shopping"></i>
-                        <span className="counter">25</span>
-                        <span className="total-purchase">$1835.94</span>
+                        <span className="counter">{shirtsCount}</span>
+                        <span className="total-purchase">${totalPurchase.toFixed(2)}</span>
                     </div>
                     <div className={showNavbar ? "lines cross" : "lines"} onClick={() => setShowNavbar(!showNavbar)}>
                         <span></span>
@@ -29,7 +31,7 @@ const Header = () => {
                         <Link to="/">Home</Link>
                         <Link to="/">Buy Shirts</Link>
                         <Link to="/">Discounts</Link>
-                        <button>Login</button>
+                        <button className="login-btn">Login</button>
                     </nav>
                 </div>
             </section>

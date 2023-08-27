@@ -26,8 +26,13 @@ header .header {
     column-gap: 0.5rem;
 }
 
+.header .logo-name i.fa-shirt {
+    text-shadow: 0 0 10px var(--orange);
+}
+
 .header .logo-name h1 {
     font-size: 1.1rem;
+    text-shadow: 0 0 10px var(--black);
 }
 
 .header .right-part {
@@ -35,6 +40,7 @@ header .header {
 }
 
 .header .right-part .cart {
+    width: 60px;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -115,6 +121,10 @@ header .header {
     padding: 1rem;
 }
 
+.header nav .login-btn {
+    width: 140px;
+}
+
 
 
 /* media query */
@@ -142,10 +152,10 @@ header .header {
         transition: none;
     }
     .header nav * {
-        width: 90px;
         margin-top: 0;
     }
     .header nav a {
+        width: 90px;
         padding: 14px;
         display: flex;
         justify-content: center;
@@ -154,5 +164,8 @@ header .header {
     .header nav a:hover {
         color: var(--white);
         background-color: var(--orange);
+    }
+    .header nav .login-btn {
+        width: 100px;
     }
 }
