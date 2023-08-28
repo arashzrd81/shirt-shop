@@ -43,7 +43,7 @@ main .shirts {
 .shirts .shirts-cards {
     width: 90%;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(235px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(235px, 1fr));
     justify-items: center;
     gap: 2rem;
 }
@@ -88,11 +88,6 @@ main .shirts {
 
 .shirts .shirt-card .score {
     margin-left: 0.5rem;
-}
-
-.shirts .shirt-card i.fa-star {
-    margin-right: 0.3rem;
-    color: var(--yellow);
 }
 
 .shirts .shirt-card .counter {

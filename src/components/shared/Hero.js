@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import TextTransition, { presets } from "react-text-transition";
 import "../../assets/styles/Hero.css";
-import banner from "../../assets/images/banner.png";
 
 
 const seasons = ["Winter", "Spring", "Summer", "Autumn"];
@@ -39,15 +38,16 @@ const Hero = () => {
                     </div>
                 </div>
                 <div className="hero-banner">
-                    <img src={banner} alt="banner" />
+                    <img src="https://i.postimg.cc/DwmT3RDg/banner.png" alt="banner" />
                     <h1>SHIRT SHOP</h1>
                 </div>
                 <div className="shapes">
                     <div className="orange-circles">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
+                        {
+                            Array(4).fill().map(() => (
+                                <span></span>
+                            ))
+                        }
                     </div>
                     <div className="shirt-icon">
                         <i className="fa-solid fa-shirt"></i>

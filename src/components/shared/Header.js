@@ -23,16 +23,22 @@ const Header = () => {
                         <span className="total-purchase">${totalPurchase.toFixed(2)}</span>
                     </div>
                     <div className={showNavbar ? "lines cross" : "lines"} onClick={() => setShowNavbar(!showNavbar)}>
-                        <span></span>
-                        <span></span>
-                        <span></span>
+                        {
+                            Array(3).fill().map(() => (
+                                <span></span>
+                            ))
+                        }
                     </div>
-                    <nav className={showNavbar ? "navbar" : undefined}>
-                        <Link to="/">Home</Link>
-                        <Link to="/">Buy Shirts</Link>
-                        <Link to="/">Discounts</Link>
-                        <button className="login-btn">Login</button>
-                    </nav>
+                    <div className={showNavbar ? "navbar navbar-visible" : "navbar"}>
+                        <nav>
+                            <Link to="/">Home</Link>
+                            <Link to="/">Buy Shirts</Link>
+                            <Link to="/">Get Discount</Link>
+                        </nav>
+                        <Link to="/" >
+                            <button className="login-btn">Login</button>
+                        </Link>
+                    </div>
                 </div>
             </section>
         </header>

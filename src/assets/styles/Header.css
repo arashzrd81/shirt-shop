@@ -2,6 +2,7 @@ header,
 header .header,
 header .header > *,
 .header .cart .counter,
+.header .right-part .navbar,
 .header .right-part nav {
     display: flex;
     align-items: center;
@@ -40,7 +41,7 @@ header .header {
 }
 
 .header .right-part .cart {
-    width: 60px;
+    width: 50px;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -95,25 +96,29 @@ header .header {
     transform: translateY(-0.5rem) rotate(45deg);
 }
 
-.header .right-part nav {
+.header .right-part .navbar {
     width: 100vw;
     height: 100vh;
     position: fixed;
     z-index: 2;
     top: 5rem;
     left: 0;
-    flex-direction: column;
     background-color: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(20px);
     transform: translateX(100vw);
     transition: 1s;
 }
 
-.header .right-part .navbar {
+.header .right-part .navbar,
+.header .right-part nav {
+    flex-direction: column;
+}
+
+.header .right-part .navbar-visible {
     transform: none;
 }
 
-.header nav * {
+.header .navbar a {
     margin-top: 2rem;
 }
 
@@ -121,7 +126,7 @@ header .header {
     padding: 1rem;
 }
 
-.header nav .login-btn {
+.header .navbar .login-btn {
     width: 140px;
 }
 
@@ -134,38 +139,41 @@ header .header {
         padding: 0 70px;
     }
     .header .right-part {
-        width: 70%;
+        width: 74%;
         flex-direction: row-reverse;
-        justify-content: space-between;
+        justify-content: flex-start;
+        column-gap: 40px;
     }
     .header .right-part .lines {
         display: none;
     }
-    .header .right-part nav {
-        width: fit-content;
+    .header .right-part .navbar {
+        width: 84%;
         height: auto;
         position: static;
-        flex-direction: row;
-        column-gap: 15px;
+        justify-content: space-between;
         font-size: 17px;
         transform: none;
         transition: none;
     }
-    .header nav * {
+    .header .right-part .navbar,
+    .header .right-part nav {
+        flex-direction: row;
+        column-gap: 15px;
+    }
+    .header .navbar a {
         margin-top: 0;
     }
     .header nav a {
-        width: 90px;
+        width: 105px;
         padding: 14px;
-        display: flex;
-        justify-content: center;
         transition: 0.3s;
     }
     .header nav a:hover {
         color: var(--white);
         background-color: var(--orange);
     }
-    .header nav .login-btn {
+    .header .navbar .login-btn {
         width: 100px;
     }
 }
