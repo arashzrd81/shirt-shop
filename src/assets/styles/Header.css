@@ -1,6 +1,13 @@
-header,
+header {
+    padding: 1rem 1.5rem;
+    position: sticky;
+    z-index: 2;
+    top: 0;
+    background-color: var(--white);
+}
+
 header .header,
-header .header > *,
+.header .right-part,
 .header .cart .counter,
 .header .right-part .navbar,
 .header .right-part nav {
@@ -8,32 +15,9 @@ header .header > *,
     align-items: center;
 }
 
-header {
-    height: 5rem;
-    padding: 0 1.5rem;
-    position: sticky;
-    z-index: 2;
-    top: 0;
-    background-color: var(--white);
-}
-
 header .header {
-    width: 100%;
     justify-content: space-between;
     column-gap: 1.5rem;
-}
-
-.header .logo-name {
-    column-gap: 0.5rem;
-}
-
-.header .logo-name i.fa-shirt {
-    text-shadow: 0 0 10px var(--orange);
-}
-
-.header .logo-name h1 {
-    font-size: 1.1rem;
-    text-shadow: 0 0 10px var(--black);
 }
 
 .header .right-part {
@@ -101,7 +85,7 @@ header .header {
     height: 100vh;
     position: fixed;
     z-index: 2;
-    top: 5rem;
+    top: 4.5rem;
     left: 0;
     background-color: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(20px);
@@ -127,7 +111,7 @@ header .header {
 }
 
 .header .navbar .login-btn {
-    width: 140px;
+    width: 160px;
 }
 
 
@@ -136,12 +120,11 @@ header .header {
 
 @media screen and (min-width: 992px) {
     header {
-        padding: 0 70px;
+        padding: 20px 70px;
     }
     .header .right-part {
         width: 74%;
         flex-direction: row-reverse;
-        justify-content: flex-start;
         column-gap: 40px;
     }
     .header .right-part .lines {
@@ -167,6 +150,8 @@ header .header {
     .header nav a {
         width: 105px;
         padding: 14px;
+        border-radius: 7px;
+        text-align: center;
         transition: 0.3s;
     }
     .header nav a:hover {

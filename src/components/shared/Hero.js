@@ -11,8 +11,7 @@ const Hero = () => {
 
     useEffect(() => {
         const intervalId = setInterval(() =>
-            setIndex((index) => index + 1),
-            2500
+            setIndex((index) => index + 1), 2500
         );
         return () => clearTimeout(intervalId);
     }, []);
@@ -30,8 +29,10 @@ const Hero = () => {
                     </h1>
                     <p>Brand day flat 20% off and free shipping</p>
                     <div className="info">
-                        <button className="shop-now-btn">Shop Now</button>
-                        <div className="phone-info">
+                        <a href="#shirts">
+                            <button className="shop-now-btn">Shop Now</button>
+                        </a>
+                        <div className="contact-info">
                             <i className="fa-solid fa-phone-volume"></i>
                             <span className="phone-number">+(00)-000-000-0000</span>
                         </div>
@@ -44,9 +45,9 @@ const Hero = () => {
                 <div className="shapes">
                     <div className="orange-circles">
                         {
-                            Array(4).fill().map(() => (
-                                <span></span>
-                            ))
+                            Array(4).fill().map(
+                                (item, index) => <span key={index}></span>
+                            )
                         }
                     </div>
                     <div className="shirt-icon">

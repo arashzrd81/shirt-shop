@@ -63,21 +63,6 @@ main .hero {
     height: 50px;
 }
 
-.hero .info .phone-info {
-    display: flex;
-    column-gap: 0.7rem;
-}
-
-.hero .info i.fa-phone-volume {
-    font-size: 1.2rem;
-    color: var(--orange);
-}
-
-.hero .info .phone-number {
-    font-size: 0.9rem;
-    font-weight: bold;
-}
-
 .hero .hero-banner {
     max-width: 20rem;
 }

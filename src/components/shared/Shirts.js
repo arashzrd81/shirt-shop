@@ -1,6 +1,6 @@
 import React, { useContext, useReducer } from "react";
-import { CartContext } from "../../context/CartProvider";
 import shirtsData from "../../service/shirts-data.json";
+import { CartContext } from "../../context/CartProvider";
 import "../../assets/styles/Shirts.css";
 
 
@@ -18,7 +18,9 @@ const filterReducer = (state, buttonName) => {
         return {...initialSate};
     } else {
         if (state[buttonName]) {
-            const newDisplayedShirts = state.displayedShirts.filter(shirt => shirt.category !== buttonName);
+            const newDisplayedShirts = state.displayedShirts.filter(
+                shirt => shirt.category !== buttonName
+            );
             if (newDisplayedShirts.length) {
                 return {
                     ...state,
@@ -29,7 +31,9 @@ const filterReducer = (state, buttonName) => {
                 return {...initialSate};
             }
         } else {
-            const newDisplayedShirts = shirtsData.filter(shirt => shirt.category === buttonName);
+            const newDisplayedShirts = shirtsData.filter(
+                shirt => shirt.category === buttonName
+            );
             const newState = {
                 ...state,
                 all: false,
@@ -55,21 +59,41 @@ const Shirts = () => {
     const [state, dispatch] = useReducer(filterReducer, initialSate);
 
     return (
-        <main>
+        <main id="shirts">
             <section className="shirts">
                 <h2>Just For You</h2>
                 <div className="filter-buttons">
-                    <button className={state.all ? "active" : undefined} onClick={() => dispatch("all")}>All</button>
-                    <button className={state.tShirt ? "active" : undefined} onClick={() => dispatch("tShirt")}>T-Shirt</button>
-                    <button className={state.poloShirt ? "active" : undefined} onClick={() => dispatch("poloShirt")}>Polo Shirt</button>
-                    <button className={state.hoodie ? "active" : undefined} onClick={() => dispatch("hoodie")}>Hoodie</button>
-                    <button className={state.sweatShirt ? "active" : undefined} onClick={() => dispatch("sweatShirt")}>Sweat Shirt</button>
+                    <button
+                        className={state.all ? "active" : undefined}
+                        onClick={() => dispatch("all")}>
+                        All
+                    </button>
+                    <button
+                        className={state.tShirt ? "active" : undefined}
+                        onClick={() => dispatch("tShirt")}>
+                        T-Shirt
+                    </button>
+                    <button
+                        className={state.poloShirt ? "active" : undefined}
+                        onClick={() => dispatch("poloShirt")}>
+                        Polo Shirt
+                    </button>
+                    <button
+                        className={state.hoodie ? "active" : undefined}
+                        onClick={() => dispatch("hoodie")}>
+                        Hoodie
+                    </button>
+                    <button
+                        className={state.sweatShirt ? "active" : undefined}
+                        onClick={() => dispatch("sweatShirt")}>
+                        Sweat Shirt
+                    </button>
                 </div>
                 <div className="shirts-cards">
                     {
-                        state.displayedShirts.map(shirtData => (
-                            <Shirt shirtData={shirtData} />
-                        ))
+                        state.displayedShirts.map(
+                            shirtData => <Shirt key={shirtData.id} shirtData={shirtData} />
+                        )
                     }
                 </div>
             </section>
@@ -84,12 +108,16 @@ const Shirt = ({shirtData}) => {
     const {id, title, image, price, offPrice, score} = shirtData;
 
     const checkQuantity = (id) => {
-        const index = state.selectedShirts.findIndex(shirt => shirt.id === id);
+        const index = state.selectedShirts.findIndex(
+            shirt => shirt.id === id
+        );
         return index === -1 ? false : true;
     };
 
     const quantityCount = (id) => {
-        const selectedShirt = state.selectedShirts.find(shirt => shirt.id === id);
+        const selectedShirt = state.selectedShirts.find(
+            shirt => shirt.id === id
+        );
         return selectedShirt.quantity;
     };
 
@@ -116,12 +144,24 @@ const Shirt = ({shirtData}) => {
                 {
                     checkQuantity(id) ?
                     <div className="counter">
-                        <button className="change-quantity-btn" onClick={() => handleClick("INCREASE")}>+</button>
+                        <button
+                            className="change-quantity-btn"
+                            onClick={() => handleClick("INCREASE")}>
+                            +
+                        </button>
                         <span className="quantity">{quantityCount(id)}</span>
-                        <button className="change-quantity-btn" onClick={() => handleClick("DECREASE")}>-</button>
+                        <button
+                            className="change-quantity-btn"
+                            onClick={() => handleClick("DECREASE")}>
+                            -
+                        </button>
                     </div> :
                     <div className="counter">
-                        <button className="add-to-cart-btn" onClick={() => handleClick("ADD")}>Add to Cart</button>
+                        <button
+                            className="add-to-cart-btn"
+                            onClick={() => handleClick("ADD")}>
+                            Add to Cart
+                        </button>
                     </div>
                 }
             </div>

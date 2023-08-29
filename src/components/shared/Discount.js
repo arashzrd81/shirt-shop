@@ -4,7 +4,7 @@ import "../../assets/styles/Discount.css";
 
 const Discount = () => {
     return (
-        <main>
+        <main id="discount">
             <section className="discount">
                 <img src="https://i.postimg.cc/G2t741F7/shopping.png" alt="shopping" />
                 <div className="subscribe">

@@ -5,12 +5,16 @@ const initialState = {
     selectedShirts: [],
     shirtsCount: 0,
     totalPurchase: 0,
-    isPaid: false
+    checkout: false
 };
 
 const calculator = (selectedShirts) => {
-    const shirtsCount = selectedShirts.reduce((total, shirt) => total + shirt.quantity, 0);
-    const totalPurchase = selectedShirts.reduce((total, shirt) => total + shirt.quantity * shirt.offPrice, 0);
+    const shirtsCount = selectedShirts.reduce(
+        (total, shirt) => total + shirt.quantity, 0
+    );
+    const totalPurchase = selectedShirts.reduce(
+        (total, shirt) => total + shirt.quantity * shirt.offPrice, 0
+    ).toFixed(2);
     return {shirtsCount, totalPurchase};
 };
 
@@ -28,16 +32,22 @@ const cartReducer = (state, action) => {
                 ...calculator(state.selectedShirts)
             };
         case "INCREASE":
-            const indexI = state.selectedShirts.findIndex(shirt => shirt.id === action.payload.id);
+            const indexI = state.selectedShirts.findIndex(
+                shirt => shirt.id === action.payload.id
+            );
             state.selectedShirts[indexI].quantity++;
             return {
                 ...state,
                 ...calculator(state.selectedShirts)
             };
         case "DECREASE":
-            const indexD = state.selectedShirts.findIndex(shirt => shirt.id === action.payload.id);
+            const indexD = state.selectedShirts.findIndex(
+                shirt => shirt.id === action.payload.id
+            );
             if (state.selectedShirts[indexD].quantity === 1) {
-                const newSelectedShirts = state.selectedShirts.filter(shirt => shirt.id !== action.payload.id);
+                const newSelectedShirts = state.selectedShirts.filter(
+                    shirt => shirt.id !== action.payload.id
+                );
                 return {
                     ...state,
                     selectedShirts: newSelectedShirts,

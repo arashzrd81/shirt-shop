@@ -11,7 +11,7 @@ const feedbacks = [
         pfp: `${pfp1}`,
         name: "John Smith",
         date: "17 February,2023",
-        feedbackText: `Thank you for offering these beautifully
+        feedbackText: `Thank's for offering these beautifully
                        unique shirts. They are flattering and gorgeous.`
     },
     {
@@ -20,8 +20,8 @@ const feedbacks = [
         name: "Thomas Adams",
         date: "4 April,2023",
         feedbackText: `This is my very first order through site,
-                       and I am totally and completely satisfied!
-                       I will definitely return again and again.`
+                       and I'm totally and completely satisfied!
+                       I'll definitely return again.`
     },
     {
         id: 3,
@@ -40,9 +40,9 @@ const Feedbacks = () => {
                 <h2>What Our Customers Say?</h2>
                 <div className="feedbacks-boxes">
                     {
-                        feedbacks.map(feedback => (
-                            <Feedback key={feedback.id} feedback={feedback} />
-                        ))
+                        feedbacks.map(
+                            feedback => <Feedback key={feedback.id} feedback={feedback} />
+                        )
                     }
                 </div>
             </section>
@@ -57,18 +57,18 @@ const Feedback = ({feedback: {pfp, name, date, feedbackText}}) => {
             <i className="fa-solid fa-quote-right"></i>
             <div className="pfp">
                 {
-                    Array(3).fill().map(() => (
-                        <span></span>
-                    ))
+                    Array(3).fill().map(
+                        (item, index) => <span key={index}></span>
+                    )
                 }
                 <img src={pfp} alt="pfp" />
             </div>
             <h3>{name}</h3>
             <div className="stars">
                 {
-                    Array(5).fill().map(() => (
-                        <i className="fa-solid fa-star"></i>
-                    ))
+                    Array(5).fill().map(
+                        (item, index) => <i key={index} className="fa-solid fa-star"></i>
+                    )
                 }
             </div>
             <h4>{date}</h4>

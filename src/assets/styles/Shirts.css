@@ -1,6 +1,5 @@
 main:nth-of-type(2) {
     padding: 3.5rem 1.5rem;
-    text-align: center;
 }
 
 main .shirts,
@@ -21,16 +20,20 @@ main .shirts {
     font-size: 2rem;
 }
 
+.shirts .filter-buttons,
+.shirts .shirts-cards {
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
 .shirts .filter-buttons {
-    width: 65%;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    justify-items: center;
     gap: 1rem;
 }
 
 .shirts .filter-buttons * {
-    width: min(100%, 140px);
+    width: 140px;
     color: var(--orange);
     background-color: var(--white);
 }
@@ -41,11 +44,7 @@ main .shirts {
 }
 
 .shirts .shirts-cards {
-    width: 90%;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(235px, 1fr));
-    justify-items: center;
-    gap: 2rem;
+    gap: 2.5rem;
 }
 
 .shirts .shirts-cards .shirt-card {
@@ -111,6 +110,7 @@ main .shirts {
 
 .shirts .shirt-card .quantity {
     width: 20%;
+    text-align: center;
     font-weight: bold;
 }
 
