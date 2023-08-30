@@ -10,7 +10,7 @@ import Footer from "../shared/Footer";
 
 const Home = () => {
     return (
-        <div className="container">
+        <div id="container">
             <Header />
             <Hero />
             <Shirts />

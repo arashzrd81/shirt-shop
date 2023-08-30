@@ -5,7 +5,7 @@ import "../../assets/styles/Discount.css";
 const Discount = () => {
     return (
         <main id="discount">
-            <section className="discount">
+            <section className="discount-sec">
                 <img src="https://i.postimg.cc/G2t741F7/shopping.png" alt="shopping" />
                 <div className="subscribe">
                     <h2>20% discount</h2>

@@ -11,19 +11,17 @@ const Header = () => {
 
     return (
         <header>
-            <section className="header">
+            <section className="header-sec">
                 <div className="logo-name">
                     <i className="fa-solid fa-shirt"></i>
                     <h1>SHIRT SHOP</h1>
                 </div>
                 <div className="right-part">
-                    <a href="#">
-                        <div className="cart">
-                            <i className="fa-solid fa-cart-shopping"></i>
-                            <span className="counter">{shirtsCount}</span>
-                            <span className="total-purchase">${totalPurchase}</span>
-                        </div>
-                    </a>
+                    <Link className="cart" to="/cart">
+                        <i className="fa-solid fa-cart-shopping"></i>
+                        <span className="counter">{shirtsCount}</span>
+                        <span className="total-purchase">${totalPurchase}</span>
+                    </Link>
                     <div
                         className={showNavbar ? "lines cross" : "lines"}
                         onClick={() => setShowNavbar(!showNavbar)}>

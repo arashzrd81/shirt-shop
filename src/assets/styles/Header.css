@@ -6,25 +6,25 @@ header {
     background-color: var(--white);
 }
 
-header .header,
-.header .right-part,
-.header .cart .counter,
-.header .right-part .navbar,
-.header .right-part nav {
+header .header-sec,
+header .right-part,
+header .cart .counter,
+header .right-part .navbar,
+header .right-part nav {
     display: flex;
     align-items: center;
 }
 
-header .header {
+header .header-sec {
     justify-content: space-between;
     column-gap: 1.5rem;
 }
 
-.header .right-part {
+header .right-part {
     column-gap: 1.25rem;
 }
 
-.header .right-part .cart {
+header .right-part .cart {
     width: 50px;
     position: relative;
     display: flex;
@@ -33,12 +33,7 @@ header .header {
     font-weight: bold;
 }
 
-.header .cart i.fa-cart-shopping {
-    font-size: 1.2rem;
-    color: var(--black);
-}
-
-.header .cart .counter {
+header .cart .counter {
     width: 1.05rem;
     height: 1.05rem;
     border-radius: 50%;
@@ -51,36 +46,36 @@ header .header {
     background-color: var(--orange);
 }
 
-.header .cart .total-purchase {
+header .cart .total-purchase {
     font-size: 0.85rem;
 }
 
-.header .right-part .lines {
+header .right-part .lines {
     width: 1.85rem;
     display: flex;
     flex-direction: column;
     row-gap: 0.31rem;
 }
 
-.header .lines * {
+header .lines * {
     height: 0.21rem;
     background-color: var(--black);
     transition: 1s;
 }
 
-.header .cross :nth-child(1) {
+header .cross :nth-child(1) {
     transform: translateY(0.5rem) rotate(-45deg);
 }
 
-.header .cross :nth-child(2) {
+header .cross :nth-child(2) {
     opacity: 0;
 }
 
-.header .cross :nth-child(3) {
+header .cross :nth-child(3) {
     transform: translateY(-0.5rem) rotate(45deg);
 }
 
-.header .right-part .navbar {
+header .right-part .navbar {
     width: 100vw;
     height: 100vh;
     position: fixed;
@@ -93,24 +88,24 @@ header .header {
     transition: 1s;
 }
 
-.header .right-part .navbar,
-.header .right-part nav {
+header .right-part .navbar,
+header .right-part nav {
     flex-direction: column;
 }
 
-.header .right-part .navbar-visible {
+header .right-part .navbar-visible {
     transform: none;
 }
 
-.header .navbar a {
+header .navbar a {
     margin-top: 2rem;
 }
 
-.header nav a {
+header nav a {
     padding: 1rem;
 }
 
-.header .navbar .login-btn {
+header .navbar .login-btn {
     width: 160px;
 }
 
@@ -122,15 +117,15 @@ header .header {
     header {
         padding: 20px 70px;
     }
-    .header .right-part {
+    header .right-part {
         width: 74%;
         flex-direction: row-reverse;
         column-gap: 40px;
     }
-    .header .right-part .lines {
+    header .right-part .lines {
         display: none;
     }
-    .header .right-part .navbar {
+    header .right-part .navbar {
         width: 84%;
         height: auto;
         position: static;
@@ -139,26 +134,26 @@ header .header {
         transform: none;
         transition: none;
     }
-    .header .right-part .navbar,
-    .header .right-part nav {
+    header .right-part .navbar,
+    header .right-part nav {
         flex-direction: row;
         column-gap: 15px;
     }
-    .header .navbar a {
+    header .navbar a {
         margin-top: 0;
     }
-    .header nav a {
+    header nav a {
         width: 105px;
         padding: 14px;
         border-radius: 7px;
         text-align: center;
         transition: 0.3s;
     }
-    .header nav a:hover {
+    header nav a:hover {
         color: var(--white);
         background-color: var(--orange);
     }
-    .header .navbar .login-btn {
+    header .navbar .login-btn {
         width: 100px;
     }
 }

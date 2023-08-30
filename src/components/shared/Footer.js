@@ -5,11 +5,11 @@ import "../../assets/styles/Footer.css";
 const Footer = () => {
     return (
         <footer>
-            <section className="footer">
+            <section className="footer-sec">
                 <div className="info">
                     <div className="logo-name">
                         <i className="fa-solid fa-shirt"></i>
-                        <h1>Shirt Shop</h1>
+                        <h1>SHIRT SHOP</h1>
                     </div>
                     <h3>&copy; Shirt Shop 2023 | All Rights Reserved</h3>
                 </div>

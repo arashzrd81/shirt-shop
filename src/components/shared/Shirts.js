@@ -60,7 +60,7 @@ const Shirts = () => {
 
     return (
         <main id="shirts">
-            <section className="shirts">
+            <section className="shirts-sec">
                 <h2>Just For You</h2>
                 <div className="filter-buttons">
                     <button
@@ -89,7 +89,7 @@ const Shirts = () => {
                         Sweat Shirt
                     </button>
                 </div>
-                <div className="shirts-cards">
+                <div className="cards">
                     {
                         state.displayedShirts.map(
                             shirtData => <Shirt key={shirtData.id} shirtData={shirtData} />
@@ -129,7 +129,7 @@ const Shirt = ({shirtData}) => {
     };
 
     return (
-        <div className="shirt-card">
+        <div className="card">
             <img src={image} alt="shirt" />
             <h3>{title}</h3>
             <div className="prices">

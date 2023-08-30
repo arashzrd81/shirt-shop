@@ -35,10 +35,10 @@ const feedbacks = [
 
 const Feedbacks = () => {
     return (
-        <main>
-            <section className="feedbacks">
+        <main id="feedbacks">
+            <section className="feedbacks-sec">
                 <h2>What Our Customers Say?</h2>
-                <div className="feedbacks-boxes">
+                <div className="boxes">
                     {
                         feedbacks.map(
                             feedback => <Feedback key={feedback.id} feedback={feedback} />
@@ -53,7 +53,7 @@ const Feedbacks = () => {
 
 const Feedback = ({feedback: {pfp, name, date, feedbackText}}) => {
     return (
-        <div className="feedback-box">
+        <div className="box">
             <i className="fa-solid fa-quote-right"></i>
             <div className="pfp">
                 {

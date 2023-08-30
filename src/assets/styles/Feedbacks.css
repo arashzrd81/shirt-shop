@@ -1,26 +1,26 @@
-main:nth-of-type(4) {
+#feedbacks {
     padding: 3.5rem 1.5rem;
     text-align: center;
     background-color: var(--light-blue);
 }
 
-main .feedbacks,
-.feedbacks .feedbacks-boxes .feedback-box,
-.feedbacks .feedback-box .pfp {
+#feedbacks .feedbacks-sec,
+#feedbacks .boxes .box,
+#feedbacks .box .pfp {
     display: flex;
     align-items: center;
 }
 
-main .feedbacks {
+#feedbacks .feedbacks-sec {
     flex-direction: column;
     row-gap: 3rem;
 }
 
-.feedbacks h2 {
+#feedbacks h2 {
     font-size: 1.7rem;
 }
 
-.feedbacks .feedbacks-boxes {
+#feedbacks .boxes {
     width: 90%;
     display: flex;
     flex-wrap: wrap;
@@ -28,7 +28,7 @@ main .feedbacks {
     gap: 3rem;
 }
 
-.feedbacks .feedbacks-boxes .feedback-box {
+#feedbacks .boxes .box {
     max-width: 300px;
     flex-direction: column;
     row-gap: 0.7rem;
@@ -37,46 +37,46 @@ main .feedbacks {
     box-shadow: 0 0 10px var(--dark-gray);
 }
 
-.feedbacks .feedback-box i.fa-quote-right {
+#feedbacks .box .fa-quote-right {
     align-self: flex-end;
     margin: 1rem;
     font-size: 1.7rem;
 }
 
-.feedbacks .feedback-box .pfp {
+#feedbacks .box .pfp {
     position: relative;
     justify-content: center;
 }
 
-.feedbacks .feedback-box span {
+#feedbacks .box span {
     border-radius: 50%;
     position: absolute;
 }
 
-.feedbacks .feedback-box span:nth-child(1) {
+#feedbacks .box span:nth-child(1) {
     width: 130px;
     height: 130px;
     border: 1px solid var(--black);
 }
 
-.feedbacks .feedback-box span:nth-child(2),
-.feedbacks .feedback-box span:nth-child(3) {
+#feedbacks .box span:nth-child(2),
+#feedbacks .box span:nth-child(3) {
     width: 25px;
     height: 25px;
     background-color: var(--orange);
 }
 
-.feedbacks .feedback-box span:nth-child(2) {
+#feedbacks .box span:nth-child(2) {
     top: 70px;
     left: -20px;
 }
 
-.feedbacks .feedback-box span:nth-child(3) {
+#feedbacks .box span:nth-child(3) {
     top: -10px;
     left: 80px;
 }
 
-.feedbacks .feedback-box h3 {
+#feedbacks .box h3 {
     width: 100%;
     padding: 0.6rem;
     margin: 1.6rem 0 0.5rem;
@@ -84,6 +84,6 @@ main .feedbacks {
     background-color: var(--orange);
 }
 
-.feedbacks .feedback-box p {
+#feedbacks .box p {
     margin: 0 1rem 1rem;
 }

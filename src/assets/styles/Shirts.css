@@ -1,117 +1,84 @@
-main:nth-of-type(2) {
+#shirts {
     padding: 3.5rem 1.5rem;
 }
 
-main .shirts,
-.shirts .shirts-cards .shirt-card,
-.shirts .shirt-card .prices,
-.shirts .shirt-card .score-buttons,
-.shirts .shirt-card .counter {
+#shirts .shirts-sec,
+#shirts .card .score-buttons {
     display: flex;
     align-items: center;
 }
 
-main .shirts {
+#shirts .shirts-sec {
     flex-direction: column;
     row-gap: 3rem;
 }
 
-.shirts h2 {
+#shirts h2 {
     font-size: 2rem;
 }
 
-.shirts .filter-buttons,
-.shirts .shirts-cards {
+#shirts .filter-buttons {
     width: 90%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-}
-
-.shirts .filter-buttons {
     gap: 1rem;
 }
 
-.shirts .filter-buttons * {
+#shirts .filter-buttons * {
     width: 140px;
     color: var(--orange);
     background-color: var(--white);
 }
 
-.shirts .filter-buttons .active {
+#shirts .filter-buttons .active {
     color: var(--white);
     background-color: var(--orange);
 }
 
-.shirts .shirts-cards {
-    gap: 2.5rem;
+#shirts .cards {
+    width: 90%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    justify-items: center;
+    gap: 2rem;
 }
 
-.shirts .shirts-cards .shirt-card {
-    padding: 1rem;
-    border-radius: 5px;
+#shirts .cards .card {
     flex-direction: column;
     row-gap: 0.7rem;
-    box-shadow: 0 0 10px var(--dark-gray);
 }
 
-.shirts .shirt-card img {
+#shirts .card img {
     width: 200px;
     height: 240px;
 }
 
-.shirts .shirt-card h3 {
-    font-size: 1rem;
-}
-
-.shirts .shirt-card .prices {
-    column-gap: 1rem;
-    font-weight: bold;
-}
-
-.shirts .shirt-card .price {
-    font-size: 1rem;
-    text-decoration: line-through;
-}
-
-.shirts .shirt-card .off-price {
-    font-size: 1.3rem;
-    color: var(--orange);
-}
-
-.shirts .shirt-card .score-buttons {
-    width: 100%;
+#shirts .card .score-buttons {
+    width: 90%;
     justify-content: space-between;
-    font-size: 0.75rem;
+    font-size: 0.8rem;
 }
 
-.shirts .shirt-card .score {
-    margin-left: 0.5rem;
-}
-
-.shirts .shirt-card .counter {
+#shirts .card .counter {
     width: 60%;
     height: 41px;
-    flex-direction: row-reverse;
     justify-content: center;
-    column-gap: 0.25rem;
 }
 
-.shirts .shirt-card .add-to-cart-btn {
-    width: 110px;
+#shirts .card .add-to-cart-btn {
+    width: 100px;
     height: 38px;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
 }
 
-.shirts .shirt-card .change-quantity-btn {
+#shirts .card .change-quantity-btn {
     width: 25px;
     height: 25px;
 }
 
-.shirts .shirt-card .quantity {
+#shirts .card .quantity {
     width: 20%;
-    text-align: center;
-    font-weight: bold;
 }
 
 
@@ -119,7 +86,7 @@ main .shirts {
 /* media query */
 
 @media screen and (min-width: 768px) {
-    .shirts .shirt-card .add-to-cart-btn {
+    #shirts .card .add-to-cart-btn {
         font-size: 0.75rem;
     }
 }

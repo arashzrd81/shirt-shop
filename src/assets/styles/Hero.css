@@ -1,43 +1,43 @@
-main:nth-of-type(1) {
+#hero {
     padding: 2.5rem 1.5rem 0;
     text-align: center;
     background-color: var(--light-blue);
 }
 
-main .hero,
-.hero .hero-text,
-.hero .hero-text .info {
+#hero .hero-sec,
+#hero .intro,
+#hero .intro .info {
     display: flex;
     flex-direction: column;
 }
 
-main .hero {
+#hero .hero-sec {
     row-gap: 5rem;
 }
 
-.hero .hero-text {
+#hero .intro {
     row-gap: 1.5rem;
 }
 
-.hero .hero-text h2 {
+#hero .intro h2 {
     font-family: Kaushan Script;
     font-size: 1.3rem;
     font-weight: normal;
 }
 
-.hero .hero-text h1,
-.hero .hero-banner {
+#hero .intro h1,
+#hero .banner {
     align-self: center;
     position: relative;
 }
 
-.hero .hero-text h1 {
+#hero .intro h1 {
     width: 18.75rem;
     z-index: 1;
     font-size: 2.3rem;
 }
 
-.hero h1 .season {
+#hero h1 .season {
     width: 8.5rem;
     position: absolute;
     top: -0.13rem;
@@ -45,33 +45,33 @@ main .hero {
     color: var(--orange);
 }
 
-.hero h1 span {
+#hero h1 span {
     margin-left: 7.5rem;
 }
 
-.hero .hero-text p {
+#hero .intro p {
     font-size: 0.9rem;
 }
 
-.hero .hero-text .info {
+#hero .intro .info {
     align-items: center;
     row-gap: 1.25rem;
 }
 
-.hero .info .shop-now-btn {
+#hero .info .shop-now-btn {
     width: 150px;
     height: 50px;
 }
 
-.hero .hero-banner {
+#hero .banner {
     max-width: 20rem;
 }
 
-.hero .hero-banner img {
+#hero .banner img {
     width: 100%;
 }
 
-.hero .hero-banner h1 {
+#hero .banner h1 {
     position: absolute;
     right: -8rem;
     bottom: 10rem;
@@ -86,8 +86,8 @@ main .hero {
     transform: rotate(-90deg);
 }
 
-.hero .shapes .orange-circles,
-.hero .shapes .shirt-icon {
+#hero .shapes .orange-circles,
+#hero .shapes .shirt-icon {
     display: none;
 }
 
@@ -96,57 +96,57 @@ main .hero {
 /* media queries */
 
 @media screen and (min-width: 576px) {
-    main .hero {
+    #hero .hero-sec {
         position: relative;
     }
-    .hero .shapes .orange-circles {
+    #hero .shapes .orange-circles {
         display: block;
     }
-    .hero .orange-circles * {
+    #hero .orange-circles * {
         border: 1px solid var(--orange);
         border-radius: 50%;
         position: absolute;
     }
-    .hero .orange-circles :nth-child(odd) {
+    #hero .orange-circles :nth-child(odd) {
         width: 45px;
         height: 45px;
     }
-    .hero .orange-circles :nth-child(even) {
+    #hero .orange-circles :nth-child(even) {
         width: 35px;
         height: 35px;
     }
-    .hero .orange-circles :nth-child(1) {
+    #hero .orange-circles :nth-child(1) {
         top: 0;
         left: 5%;
     }
-    .hero .orange-circles :nth-child(2) {
+    #hero .orange-circles :nth-child(2) {
         top: 40px;
         left: 80%;
     }
-    .hero .orange-circles :nth-child(3) {
+    #hero .orange-circles :nth-child(3) {
         top: 210px;
         left: 85%;
     }
-    .hero .orange-circles :nth-child(4) {
+    #hero .orange-circles :nth-child(4) {
         top: 430px;
         left: 5%;
     }
 }
 
 @media screen and (min-width: 768px) {
-    main .hero {
+    #hero .hero-sec {
         flex-direction: row;
         justify-content: space-around;
         align-items: center;
     }
-    .hero .orange-circles :nth-child(2),
-    .hero .orange-circles :nth-child(3) {
+    #hero .orange-circles :nth-child(2),
+    #hero .orange-circles :nth-child(3) {
         left: 40%;
     }
-    .hero .shapes .shirt-icon {
+    #hero .shapes .shirt-icon {
         display: block;
     }
-    .hero .shapes .shirt-icon {
+    #hero .shapes .shirt-icon {
         position: absolute;
         top: -32px;
         left: 85%;
@@ -161,12 +161,12 @@ main .hero {
             transform: rotate(-15deg);
         }
     }
-    .hero .shapes i.fa-shirt {
+    #hero .shapes i.fa-shirt {
         padding: 10px;
         font-size: 35px;
         box-shadow: 0 0 10px var(--orange);
     }
-    .hero .shapes .shirt-icon:after {
+    #hero .shapes .shirt-icon:after {
         content: '';
         width: 20px;
         height: 20px;
@@ -181,36 +181,36 @@ main .hero {
 }
 
 @media screen and (min-width: 992px) {
-    main:nth-of-type(1) {
+    #hero {
         padding: 40px 80px;
         text-align: left;
     }
-    .hero .hero-text {
+    #hero .intro {
         width: 50%;
     }
-    .hero .hero-text h2 {
+    #hero .intro h2 {
         font-size: 30px;
     }
-    .hero .hero-text h1 {
+    #hero .intro h1 {
         align-self: flex-start;
         font-size: 60px;
     }
-    .hero h1 span {
+    #hero h1 span {
         margin-left: 210px;
     }
-    .hero .hero-text .info {
+    #hero .intro .info {
         margin-top: 25px;
         flex-direction: row;
         column-gap: 40px;
     }
-    .hero .orange-circles :nth-child(2) {
+    #hero .orange-circles :nth-child(2) {
         left: 35%;
     }
-    .hero .orange-circles :nth-child(4) {
+    #hero .orange-circles :nth-child(4) {
         top: 465px;
         left: 22%;
     }
-    .hero .shapes .shirt-icon {
+    #hero .shapes .shirt-icon {
         top: -27px;
     }
 }

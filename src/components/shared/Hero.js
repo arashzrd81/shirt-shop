@@ -17,9 +17,9 @@ const Hero = () => {
     }, []);
 
     return (
-        <main>
-            <section className="hero">
-                <div className="hero-text">
+        <main id="hero">
+            <section className="hero-sec">
+                <div className="intro">
                     <h2>Starting At Only $0.5</h2>
                     <h1>
                         <TextTransition className="season" springConfig={presets.wobbly}>
@@ -38,7 +38,7 @@ const Hero = () => {
                         </div>
                     </div>
                 </div>
-                <div className="hero-banner">
+                <div className="banner">
                     <img src="https://i.postimg.cc/DwmT3RDg/banner.png" alt="banner" />
                     <h1>SHIRT SHOP</h1>
                 </div>

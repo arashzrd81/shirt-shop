@@ -25,8 +25,8 @@ const features = [
 
 const Features = () => {
     return (
-        <main>
-            <section className="features">
+        <main id="features">
+            <section className="features-sec">
                 {
                     features.map(
                         feature => <Feature key={feature.id} feature={feature} />

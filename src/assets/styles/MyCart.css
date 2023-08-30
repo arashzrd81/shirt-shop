@@ -1,0 +1,167 @@
+#my-cart {
+    padding: 4.5rem 1.5rem 8rem;
+}
+
+#my-cart .my-cart-sec,
+#my-cart .cards,
+#my-cart .checkout .buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#my-cart .my-cart-sec {
+    row-gap: 4rem;
+}
+
+#my-cart .cards {
+    width: 100%;
+    row-gap: 2.5rem;
+}
+
+#my-cart .cards .title {
+    width: 250px;
+    border-bottom: 1px solid var(--dark-gray);
+    display: flex;
+    align-items: flex-end;
+    column-gap: 1.2rem;
+}
+
+#my-cart .title .fa-cart-shopping {
+    color: var(--orange);
+    animation: moving 3s ease-in-out infinite alternate;
+}
+
+@keyframes moving {
+    to {
+        transform: translateX(95px);
+    }
+}
+
+#my-cart .cards .card {
+    width: 270px;
+    column-gap: 15px;
+}
+
+#my-cart .card img {
+    width: 5.5rem;
+    height: 7rem;
+}
+
+#my-cart .card .info,
+#my-cart .info > *  {
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.7rem;
+}
+
+#my-cart .card .counter {
+    justify-content: flex-end;
+}
+
+#my-cart .card .change-quantity-btn {
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+#my-cart .card .quantity {
+    width: 25px;
+    font-size: 0.8rem;
+}
+
+#my-cart .card h4 {
+    font-size: 1rem;
+}
+
+#my-cart .checkout {
+    width: 270px;
+    padding: 1.5rem;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    font-size: 0.9rem;
+    box-shadow: 0 0 10px var(--dark-gray);
+}
+
+#my-cart .checkout > :not(.buttons) {
+    padding: 1.5rem 0;
+    border-bottom: 1px solid var(--dark-gray);
+    display: flex;
+    justify-content: space-between;
+}
+
+#my-cart .checkout span:nth-child(2) {
+    font-weight: bold;
+}
+
+#my-cart .checkout .buttons {
+    margin-top: 2rem;
+    row-gap: 1rem;
+}
+
+#my-cart .checkout a {
+    width: min(80%, 220px);
+}
+
+#my-cart .checkout button {
+    width: 100%;
+    height: 48px;
+}
+
+#my-cart .checkout .back-to-shop-btn {
+    color: var(--orange);
+    background-color: var(--white);
+}
+
+
+
+/* media queries */
+
+@media screen and (min-width: 576px) {
+    #my-cart .cards .card {
+        width: min(90%, 620px);
+        column-gap: 10%;
+    }
+    #my-cart .card .info {
+        width: 100%;
+        flex-direction: row;
+        align-items: center;
+    }
+    #my-cart .info > * {
+        row-gap: 1.2rem;
+    }
+    #my-cart .info .left-part {
+        width: 60%;
+    }
+    #my-cart .checkout {
+        width: 475px;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    #my-cart {
+        padding: 30px 70px 150px;
+    }
+    #my-cart .my-cart-sec {
+        flex-direction: row;
+        align-items: flex-start;
+        column-gap: 4%;
+    }
+    #my-cart .cards {
+        width: 65%;
+        align-items: flex-start;
+    }
+    #my-cart .cards .card {
+        width: 100%;
+        column-gap: 5%;
+    }
+    #my-cart .info .left-part {
+        width: 50%;
+    }
+    #my-cart .checkout {
+        width: 35%;
+        margin-top: 80px;
+        position: sticky;
+        top: 120px;
+    }
+}
