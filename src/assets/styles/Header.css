@@ -97,7 +97,8 @@ header .right-part .navbar-visible {
     transform: none;
 }
 
-header .navbar a {
+header .navbar a,
+header .navbar .username {
     margin-top: 2rem;
 }
 
@@ -105,8 +106,14 @@ header nav a {
     padding: 1rem;
 }
 
-header .navbar .login-btn {
+header .navbar .register-btn {
     width: 160px;
+}
+
+header .navbar .username {
+    text-align: center;
+    font-size: 1rem;
+    color: var(--orange);
 }
 
 
@@ -139,7 +146,8 @@ header .navbar .login-btn {
         flex-direction: row;
         column-gap: 15px;
     }
-    header .navbar a {
+    header .navbar a,
+    header .navbar .username {
         margin-top: 0;
     }
     header nav a {
@@ -153,7 +161,7 @@ header .navbar .login-btn {
         color: var(--white);
         background-color: var(--orange);
     }
-    header .navbar .login-btn {
-        width: 100px;
+    header .navbar .register-btn {
+        width: 105px;
     }
 }

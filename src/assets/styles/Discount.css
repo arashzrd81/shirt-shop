@@ -10,13 +10,9 @@
     display: none;
 }
 
-#discount .subscribe,
-#discount .subscribe form {
+#discount .subscribe {
     display: flex;
     flex-direction: column;
-}
-
-#discount .subscribe {
     row-gap: 1.3rem;
 }
 
@@ -49,8 +45,6 @@
 #discount form input {
     padding: 0.88rem;
     border: 2px solid var(--white);
-    border-radius: 7px;
-    outline: none;
     text-align: left;
     background-color: var(--white);
     box-shadow: 0 0 10px var(--dark-gray);

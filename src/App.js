@@ -1,19 +1,24 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import CartProvider from "./context/CartProvider";
-import Home from "./components/pages/Home";
-import Cart from "./components/pages/Cart";
+import RegisterProvider from "./contexts/RegisterProvider";
+import CartProvider from "./contexts/CartProvider";
+import Home from "./pages/Home";
+import Register from "./pages/Register";
+import Cart from "./pages/Cart";
 import "./App.css";
 
 
 const App = () => {
     return (
+        <RegisterProvider>
         <CartProvider>
             <Routes>
                 <Route path="/" element={<Home />} />
+                <Route path="/register" element={<Register />} />
                 <Route path="/cart" element={<Cart />} />
             </Routes>
         </CartProvider>
+        </RegisterProvider>
     );
 };
 

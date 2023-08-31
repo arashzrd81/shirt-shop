@@ -29,7 +29,8 @@ const cartReducer = (state, action) => {
             return {
                 ...state,
                 selectedShirts: state.selectedShirts,
-                ...calculator(state.selectedShirts)
+                ...calculator(state.selectedShirts),
+                checkout: false
             };
         case "INCREASE":
             const indexI = state.selectedShirts.findIndex(
@@ -60,6 +61,13 @@ const cartReducer = (state, action) => {
                     ...calculator(state.selectedShirts)
                 };
             }
+        case "CHECKOUT":
+            return {
+                selectedShirts: [],
+                shirtsCount: 0,
+                totalPurchase: 0,
+                checkout: true
+            };
         default:
             return state;
     }

@@ -1,5 +1,6 @@
 import React from "react";
-import "../../assets/styles/Footer.css";
+import { Link } from "react-router-dom";
+import "../assets/styles/Footer.css";
 
 
 const Footer = () => {
@@ -15,24 +16,24 @@ const Footer = () => {
                 </div>
                 <nav>
                     <h2>SHIRTS</h2>
-                    <a href="#">T-Shirt</a>
-                    <a href="#">Polo Shirt</a>
-                    <a href="#">Hoodie</a>
-                    <a href="#">Sweat Shirt</a>
+                    <Link to="/">T-Shirt</Link>
+                    <Link to="/">Polo Shirt</Link>
+                    <Link to="/">Hoodie</Link>
+                    <Link to="/">Sweat Shirt</Link>
                 </nav>
                 <nav>
                     <h2>ABOUT</h2>
-                    <a href="#">Help</a>
-                    <a href="#">Contact us</a>
-                    <a href="#">Terms</a>
-                    <a href="#">Privacy Policy</a>
+                    <Link to="/">Help</Link>
+                    <Link to="/">Contact us</Link>
+                    <Link to="/">Terms</Link>
+                    <Link to="/">Privacy Policy</Link>
                 </nav>
                 <div className="social-media">
                     <h2>SOCIAL MEDIA</h2>
                     <nav>
-                        <a href="#"><i className="fa-brands fa-instagram"></i></a>
-                        <a href="#"><i className="fa-brands fa-telegram"></i></a>
-                        <a href="#"><i className="fa-brands fa-x-twitter"></i></a>
+                        <Link to="/"><i className="fa-brands fa-instagram"></i></Link>
+                        <Link to="/"><i className="fa-brands fa-telegram"></i></Link>
+                        <Link to="/"><i className="fa-brands fa-x-twitter"></i></Link>
                     </nav>
                     <div className="contact-info">
                         <i className="fa-solid fa-phone-volume"></i>

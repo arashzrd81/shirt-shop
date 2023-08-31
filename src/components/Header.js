@@ -1,13 +1,30 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { CartContext } from "../../context/CartProvider";
-import "../../assets/styles/Header.css";
+import { RegisterContext } from "../contexts/RegisterProvider";
+import { CartContext } from "../contexts/CartProvider";
+import { showToast } from "../helper/showToast";
+import "../assets/styles/Header.css";
 
 
 const Header = () => {
 
+    const {isRegistered, userData: {username}} = useContext(RegisterContext);
     const {state: {shirtsCount, totalPurchase}} = useContext(CartContext);
+    const [redirect, setRedirect] = useState();
     const [showNavbar, setShowNavbar] = useState(false);
+
+    useEffect(() => {
+        isRegistered ? setRedirect(true) : setRedirect(false);
+        shirtsCount ? setRedirect(true) : setRedirect(false);
+    }, [isRegistered, shirtsCount]);
+
+    const onClick = () => {
+        if (!isRegistered) {
+            showToast("error", "You are not registered!");
+        } else if (!shirtsCount) {
+            showToast("error", "You have not selected any shirt!");
+        }
+    };
 
     return (
         <header>
@@ -17,7 +34,7 @@ const Header = () => {
                     <h1>SHIRT SHOP</h1>
                 </div>
                 <div className="right-part">
-                    <Link className="cart" to="/cart">
+                    <Link className="cart" to={redirect ? "/cart" : undefined} onClick={onClick}>
                         <i className="fa-solid fa-cart-shopping"></i>
                         <span className="counter">{shirtsCount}</span>
                         <span className="total-purchase">${totalPurchase}</span>
@@ -37,9 +54,13 @@ const Header = () => {
                             <a href="#shirts">Buy Shirts</a>
                             <a href="#discount">Get Discount</a>
                         </nav>
-                        <Link to="/" >
-                            <button className="login-btn">Login</button>
-                        </Link>
+                        {
+                            isRegistered ?
+                            <h3 className="username">{username}</h3> :
+                            <Link to="/register" >
+                                <button className="register-btn">Register</button>
+                            </Link>
+                        }
                     </div>
                 </div>
             </section>

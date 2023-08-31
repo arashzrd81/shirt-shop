@@ -1,7 +1,9 @@
 import React, { useContext, useReducer } from "react";
-import shirtsData from "../../service/shirts-data.json";
-import { CartContext } from "../../context/CartProvider";
-import "../../assets/styles/Shirts.css";
+import shirtsData from "../service/shirtsData.json";
+import { RegisterContext } from "../contexts/RegisterProvider";
+import { CartContext } from "../contexts/CartProvider";
+import { showToast } from "../helper/showToast";
+import "../assets/styles/Shirts.css";
 
 
 const initialSate = {
@@ -104,28 +106,31 @@ const Shirts = () => {
 
 const Shirt = ({shirtData}) => {
 
-    const {state, dispatch} = useContext(CartContext);
+    const {isRegistered} = useContext(RegisterContext);
+    const {state: {selectedShirts}, dispatch} = useContext(CartContext);
     const {id, title, image, price, offPrice, score} = shirtData;
 
     const checkQuantity = (id) => {
-        const index = state.selectedShirts.findIndex(
+        const index = selectedShirts.findIndex(
             shirt => shirt.id === id
         );
         return index === -1 ? false : true;
     };
 
     const quantityCount = (id) => {
-        const selectedShirt = state.selectedShirts.find(
+        const selectedShirt = selectedShirts.find(
             shirt => shirt.id === id
         );
         return selectedShirt.quantity;
     };
 
-    const handleClick = (actionType) => {
+    const onClick = (actionType) => {
+        isRegistered ?
         dispatch({
             type: actionType,
             payload: shirtData
-        });
+        }) :
+        showToast("error", "You are not registered!");
     };
 
     return (
@@ -146,20 +151,20 @@ const Shirt = ({shirtData}) => {
                     <div className="counter">
                         <button
                             className="change-quantity-btn"
-                            onClick={() => handleClick("INCREASE")}>
+                            onClick={() => onClick("INCREASE")}>
                             +
                         </button>
                         <span className="quantity">{quantityCount(id)}</span>
                         <button
                             className="change-quantity-btn"
-                            onClick={() => handleClick("DECREASE")}>
+                            onClick={() => onClick("DECREASE")}>
                             -
                         </button>
                     </div> :
                     <div className="counter">
                         <button
                             className="add-to-cart-btn"
-                            onClick={() => handleClick("ADD")}>
+                            onClick={() => onClick("ADD")}>
                             Add to Cart
                         </button>
                     </div>

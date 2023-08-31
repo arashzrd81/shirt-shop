@@ -1,8 +1,8 @@
 import React from "react";
-import "../../assets/styles/Feedbacks.css";
-import pfp1 from "../../assets/images/pfp-1.svg";
-import pfp2 from "../../assets/images/pfp-2.svg";
-import pfp3 from "../../assets/images/pfp-3.svg";
+import "../assets/styles/Feedbacks.css";
+import pfp1 from "../assets/images/pfp-1.svg";
+import pfp2 from "../assets/images/pfp-2.svg";
+import pfp3 from "../assets/images/pfp-3.svg";
 
 
 const feedbacks = [
@@ -12,7 +12,7 @@ const feedbacks = [
         name: "John Smith",
         date: "17 February,2023",
         feedbackText: `Thank's for offering these beautifully
-                       unique shirts. They are flattering and gorgeous.`
+            unique shirts. They are flattering and gorgeous.`
     },
     {
         id: 2,
@@ -20,8 +20,8 @@ const feedbacks = [
         name: "Thomas Adams",
         date: "4 April,2023",
         feedbackText: `This is my very first order through site,
-                       and I'm totally and completely satisfied!
-                       I'll definitely return again.`
+            and I'm totally and completely satisfied!
+            I'll definitely return again.`
     },
     {
         id: 3,
@@ -29,7 +29,7 @@ const feedbacks = [
         name: "Lucas Wilson",
         date: "23 July,2023",
         feedbackText: `Great service, great shirts and fast delivery!
-                       Loved the shirts, now buying more! Happy! Happy!`
+            Loved the shirts, now buying more! Happy! Happy!`
     }
 ];
 

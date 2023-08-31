@@ -1,8 +1,8 @@
 import React from "react";
-import "../../assets/styles/Features.css";
-import featureLogo1 from "../../assets/images/feature-logo-1.svg";
-import featureLogo2 from "../../assets/images/feature-logo-2.svg";
-import featureLogo3 from "../../assets/images/feature-logo-3.svg";
+import "../assets/styles/Features.css";
+import featureLogo1 from "../assets/images/feature-logo-1.svg";
+import featureLogo2 from "../assets/images/feature-logo-2.svg";
+import featureLogo3 from "../assets/images/feature-logo-3.svg";
 
 
 const features = [

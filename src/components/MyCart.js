@@ -1,12 +1,17 @@
-import React, { useContext } from "react";
-import { Link } from "react-router-dom";
-import { CartContext } from "../../context/CartProvider";
-import "../../assets/styles/MyCart.css";
+import React, { useContext, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { CartContext } from "../contexts/CartProvider";
+import "../assets/styles/MyCart.css";
 
 
 const MyCart = () => {
 
-    const {state} = useContext(CartContext);
+    const {state: {selectedShirts, shirtsCount, totalPurchase}, dispatch} = useContext(CartContext);
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        !shirtsCount && navigate("/", {replace: true});
+    }, [navigate, shirtsCount]);
 
     return (
         <main id="my-cart">
@@ -14,10 +19,10 @@ const MyCart = () => {
                 <div className="cards">
                     <div className="title">
                         <h1>My Cart</h1>
-                        <i class="fa-solid fa-cart-shopping"></i>
+                        <i className="fa-solid fa-cart-shopping"></i>
                     </div>
                     {
-                        state.selectedShirts.map(
+                        selectedShirts.map(
                             selectedShirt => <Shirt key={selectedShirt.id} shirtData={selectedShirt} />
                         )
                     }
@@ -25,18 +30,18 @@ const MyCart = () => {
                 <div className="checkout">
                     <div className="shirts-count">
                         <span>Total Shirts Count</span>
-                        <span>{state.shirtsCount}</span>
+                        <span>{shirtsCount}</span>
                     </div>
                     <div className="total-purchase">
                         <span>Total Purchase</span>
-                        <span>${state.totalPurchase}</span>
+                        <span>${totalPurchase}</span>
                     </div>
                     <div className="purchase-profit">
                         <span>Your Purchase Profit</span>
                         <span style={{color: "green"}}>+ $125</span>
                     </div>
                     <div className="buttons">
-                        <Link to="/">
+                        <Link to="/" onClick={() => dispatch({type: "CHECKOUT"})}>
                             <button className="checkout-btn">CHECKOUT</button>
                         </Link>
                         <Link to="/">
@@ -55,7 +60,7 @@ const Shirt = ({shirtData}) => {
     const {dispatch} = useContext(CartContext);
     const {title, image, price, offPrice, quantity} = shirtData;
 
-    const handleClick = (actionType) => {
+    const onClick = (actionType) => {
         dispatch({
             type: actionType,
             payload: shirtData
@@ -77,13 +82,13 @@ const Shirt = ({shirtData}) => {
                     <div className="counter">
                         <button
                             className="change-quantity-btn"
-                            onClick={() => handleClick("INCREASE")}>
+                            onClick={() => onClick("INCREASE")}>
                             +
                         </button>
                         <span className="quantity">{quantity}</span>
                         <button
                             className="change-quantity-btn"
-                            onClick={() => handleClick("DECREASE")}>
+                            onClick={() => onClick("DECREASE")}>
                             -
                         </button>
                     </div>

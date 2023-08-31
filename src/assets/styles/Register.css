@@ -1,0 +1,52 @@
+#register {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+#register form {
+    width: min(90%, 400px);
+    padding: 1.5rem;
+    border: 2px solid var(--orange);
+    border-radius: 7px;
+    row-gap: 1.65rem;
+    background-color: var(--white);
+    box-shadow: 0 0 10px var(--orange);
+}
+
+#register form h1 {
+    text-align: center;
+    font-size: 1.8rem;
+    color: var(--orange);
+    text-shadow: 0 0 3px var(--orange);
+}
+
+#register form .field {
+    display: flex;
+    flex-direction: column;
+}
+
+#register form input {
+    padding: 0.8rem;
+    border: 1px solid var(--dark-gray);
+    font-size: 0.85rem;
+}
+
+#register form .error {
+    height: 1rem;
+    padding: 0.3rem;
+    font-size: 0.65rem;
+    font-weight: bold;
+    color: var(--red);
+}
+
+#register form button {
+    height: 50px;
+    margin-top: 0.5rem;
+    box-shadow: 0 0 10px var(--orange);
+}
+
+#register form .disable-btn {
+    cursor: default;
+    opacity: 0.5;
+}

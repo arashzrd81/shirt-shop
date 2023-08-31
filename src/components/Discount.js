@@ -1,5 +1,5 @@
 import React from "react";
-import "../../assets/styles/Discount.css";
+import "../assets/styles/Discount.css";
 
 
 const Discount = () => {

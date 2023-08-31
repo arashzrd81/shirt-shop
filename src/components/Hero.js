@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import TextTransition, { presets } from "react-text-transition";
-import "../../assets/styles/Hero.css";
+import "../assets/styles/Hero.css";
 
 
 const seasons = ["Winter", "Spring", "Summer", "Autumn"];
@@ -11,7 +11,7 @@ const Hero = () => {
 
     useEffect(() => {
         const intervalId = setInterval(() =>
-            setIndex((index) => index + 1), 2500
+            setIndex((index) => index + 1), 1500
         );
         return () => clearTimeout(intervalId);
     }, []);

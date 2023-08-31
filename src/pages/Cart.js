@@ -1,7 +1,7 @@
 import React from "react";
-import Header from "../shared/Header";
-import MyCart from "../shared/MyCart";
-import Footer from "../shared/Footer";
+import Header from "../components/Header";
+import MyCart from "../components/MyCart";
+import Footer from "../components/Footer";
 
 
 const Cart = () => {
