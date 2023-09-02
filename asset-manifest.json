@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/shirt-shop/static/css/main.3a4ff621.css",
+    "main.js": "/shirt-shop/static/js/main.bd1f9352.js",
+    "static/media/pfp-3.svg": "/shirt-shop/static/media/pfp-3.ce8241b842190db081064cf5cbbc98a7.svg",
+    "static/media/pfp-1.svg": "/shirt-shop/static/media/pfp-1.61ef1384c5e58f4189d0e9789e2a3d4d.svg",
+    "static/media/pfp-2.svg": "/shirt-shop/static/media/pfp-2.6f58c6905997560c7cbdab168dd3bcbb.svg",
+    "static/media/feature-logo-2.svg": "/shirt-shop/static/media/feature-logo-2.764876421bc21601c02b988c3891ff4f.svg",
+    "static/media/feature-logo-1.svg": "/shirt-shop/static/media/feature-logo-1.048ec5d17303a5e05352a54f1fe87404.svg",
+    "index.html": "/shirt-shop/index.html",
+    "static/media/feature-logo-3.svg": "/shirt-shop/static/media/feature-logo-3.6b93c4fcfc5ce320d8fbb3f176a21820.svg",
+    "main.3a4ff621.css.map": "/shirt-shop/static/css/main.3a4ff621.css.map",
+    "main.bd1f9352.js.map": "/shirt-shop/static/js/main.bd1f9352.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3a4ff621.css",
+    "static/js/main.bd1f9352.js"
+  ]
+}
