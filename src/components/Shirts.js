@@ -2,6 +2,8 @@ import React, { useContext, useReducer } from "react";
 import shirtsData from "../service/shirtsData.json";
 import { RegisterContext } from "../contexts/RegisterProvider";
 import { CartContext } from "../contexts/CartProvider";
+import Prices from "./Prices";
+import Counter from "./Counter";
 import { showToast } from "../helper/showToast";
 import "../assets/styles/Shirts.css";
 
@@ -107,24 +109,24 @@ const Shirts = () => {
 const Shirt = ({shirtData}) => {
 
     const {isRegistered} = useContext(RegisterContext);
-    const {state: {selectedShirts}, dispatch} = useContext(CartContext);
-    const {id, title, image, price, offPrice, score} = shirtData;
+    const {state: {selectedShirts, discountRatio}, dispatch} = useContext(CartContext);
+    const {id, title, image, price, score} = shirtData;
 
-    const checkQuantity = (id) => {
+    const checkQuantity = id => {
         const index = selectedShirts.findIndex(
             shirt => shirt.id === id
         );
         return index === -1 ? false : true;
     };
 
-    const quantityCount = (id) => {
+    const getQuantity = id => {
         const selectedShirt = selectedShirts.find(
             shirt => shirt.id === id
         );
         return selectedShirt.quantity;
     };
 
-    const onClick = (actionType) => {
+    const onClick = actionType => {
         isRegistered ?
         dispatch({
             type: actionType,
@@ -137,10 +139,7 @@ const Shirt = ({shirtData}) => {
         <div className="card">
             <img src={image} alt="shirt" />
             <h3>{title}</h3>
-            <div className="prices">
-                <span className="price">${price.toFixed(2)}</span>
-                <span className="off-price">${offPrice.toFixed(2)}</span>
-            </div>
+            <Prices discountRatio={discountRatio} price={price} />
             <div className="score-buttons">
                 <div className="score">
                     <i className="fa-solid fa-star"></i>
@@ -148,19 +147,7 @@ const Shirt = ({shirtData}) => {
                 </div>
                 {
                     checkQuantity(id) ?
-                    <div className="counter">
-                        <button
-                            className="change-quantity-btn"
-                            onClick={() => onClick("INCREASE")}>
-                            +
-                        </button>
-                        <span className="quantity">{quantityCount(id)}</span>
-                        <button
-                            className="change-quantity-btn"
-                            onClick={() => onClick("DECREASE")}>
-                            -
-                        </button>
-                    </div> :
+                    <Counter quantity={getQuantity(id)} onClick={onClick} /> :
                     <div className="counter">
                         <button
                             className="add-to-cart-btn"

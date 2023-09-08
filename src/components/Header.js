@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { HashLink as Link } from "react-router-hash-link";
 import { RegisterContext } from "../contexts/RegisterProvider";
 import { CartContext } from "../contexts/CartProvider";
 import { showToast } from "../helper/showToast";
@@ -34,10 +34,10 @@ const Header = () => {
                     <h1>SHIRT SHOP</h1>
                 </div>
                 <div className="right-part">
-                    <Link className="cart" to={redirect ? "/cart" : undefined} onClick={onClick}>
+                    <Link className="cart" to={redirect ? "/cart#container" : undefined} onClick={onClick}>
                         <i className="fa-solid fa-cart-shopping"></i>
                         <span className="counter">{shirtsCount}</span>
-                        <span className="total-purchase">${totalPurchase}</span>
+                        <span className="total-purchase">${totalPurchase.toFixed(2)}</span>
                     </Link>
                     <div
                         className={showNavbar ? "lines cross" : "lines"}
@@ -50,14 +50,14 @@ const Header = () => {
                     </div>
                     <div className={showNavbar ? "navbar navbar-visible" : "navbar"}>
                         <nav>
-                            <Link to="/">Home</Link>
-                            <a href="#shirts">Buy Shirts</a>
-                            <a href="#discount">Get Discount</a>
+                            <Link to="/#container">Home</Link>
+                            <Link to="/#shirts">Buy Shirts</Link>
+                            <Link to="/#discount">Get Discount</Link>
                         </nav>
                         {
                             isRegistered ?
                             <h3 className="username">{username}</h3> :
-                            <Link to="/register" >
+                            <Link to="/register#container" >
                                 <button className="register-btn">Register</button>
                             </Link>
                         }

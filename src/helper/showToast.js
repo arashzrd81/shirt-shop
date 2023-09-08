@@ -3,21 +3,18 @@ import "react-toastify/dist/ReactToastify.css";
 
 
 export const showToast = (type, message) => {
-    if (type === "success") {
-        toast.success(message, {
-            position: "top-center",
-            autoClose: 2500,
-            closeOnClick: false,
-            pauseOnHover: false,
-            theme: "dark",
-        });
-    } else {
-        toast.error(message, {
-            position: "top-center",
-            autoClose: 2500,
-            closeOnClick: false,
-            pauseOnHover: false,
-            theme: "dark",
-        });
-    }
+    const attributes = {
+        position: "top-center",
+        autoClose: 2500,
+        closeOnClick: false,
+        pauseOnHover: false,
+        theme: "dark",
+    };
+    type === "success" ?
+    toast.success(message, {
+        ...attributes
+    }) :
+    toast.error(message, {
+        ...attributes
+    });
 };

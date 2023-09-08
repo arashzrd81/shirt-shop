@@ -1,6 +1,9 @@
 import React, { useContext, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { HashLink as Link } from "react-router-hash-link";
 import { CartContext } from "../contexts/CartProvider";
+import Prices from "./Prices";
+import Counter from "./Counter";
 import "../assets/styles/MyCart.css";
 
 
@@ -12,6 +15,13 @@ const MyCart = () => {
     useEffect(() => {
         !shirtsCount && navigate("/", {replace: true});
     }, [navigate, shirtsCount]);
+
+    const profitCalculator = () => {
+        const profit = selectedShirts.reduce(
+            (total, shirt) => total + shirt.quantity * shirt.price, 0
+        ) - totalPurchase;
+        return profit;
+    };
 
     return (
         <main id="my-cart">
@@ -34,17 +44,19 @@ const MyCart = () => {
                     </div>
                     <div className="total-purchase">
                         <span>Total Purchase</span>
-                        <span>${totalPurchase}</span>
+                        <span>${totalPurchase.toFixed(2)}</span>
                     </div>
                     <div className="purchase-profit">
                         <span>Your Purchase Profit</span>
-                        <span style={{color: "green"}}>+ $125</span>
+                        <span style={{color: "var(--green)"}}>
+                            ${profitCalculator().toFixed(2)}
+                        </span>
                     </div>
                     <div className="buttons">
-                        <Link to="/" onClick={() => dispatch({type: "CHECKOUT"})}>
+                        <Link to="/#container" onClick={() => dispatch({type: "CHECKOUT"})}>
                             <button className="checkout-btn">CHECKOUT</button>
                         </Link>
-                        <Link to="/">
+                        <Link to="/#shirts">
                             <button className="back-to-shop-btn">BACK TO SHOP</button>
                         </Link>
                     </div>
@@ -57,10 +69,10 @@ const MyCart = () => {
 
 const Shirt = ({shirtData}) => {
 
-    const {dispatch} = useContext(CartContext);
-    const {title, image, price, offPrice, quantity} = shirtData;
+    const {state: {discountRatio}, dispatch} = useContext(CartContext);
+    const {title, image, price, quantity} = shirtData;
 
-    const onClick = (actionType) => {
+    const onClick = actionType => {
         dispatch({
             type: actionType,
             payload: shirtData
@@ -73,26 +85,11 @@ const Shirt = ({shirtData}) => {
             <div className="info">
                 <div className="left-part">
                     <h3>{title}</h3>
-                    <div className="prices">
-                        <span className="price">${price.toFixed(2)}</span>
-                        <span className="off-price">${offPrice.toFixed(2)}</span>
-                    </div>
+                    <Prices discountRatio={discountRatio} price={price} />
                 </div>
                 <div className="right-part">
-                    <div className="counter">
-                        <button
-                            className="change-quantity-btn"
-                            onClick={() => onClick("INCREASE")}>
-                            +
-                        </button>
-                        <span className="quantity">{quantity}</span>
-                        <button
-                            className="change-quantity-btn"
-                            onClick={() => onClick("DECREASE")}>
-                            -
-                        </button>
-                    </div>
-                    <h4>Total: ${(quantity * offPrice).toFixed(2)}</h4>
+                    <Counter quantity={quantity} onClick={onClick} />
+                    <h4>Total: ${(quantity * price * discountRatio).toFixed(2)}</h4>
                 </div>
             </div>
         </div>

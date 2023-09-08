@@ -46,9 +46,9 @@ const Register = () => {
     const {register, handleSubmit, getValues, formState: {errors}} = useForm();
 
     const onSubmit = () => {
+        setIsRegistered(1);
         setUserData(getValues());
         navigate("/", {replace: true});
-        setIsRegistered(1);
     };
 
     return (
@@ -68,7 +68,8 @@ const Register = () => {
                         )
                     }
                     <button
-                        className={Object.keys(errors).length && "disable-btn"} type="submit">
+                        className={Object.keys(errors).length && "disable-btn"}
+                        type="submit">
                         Sign Up
                     </button>
                 </form>
@@ -97,7 +98,7 @@ const Field = ({fieldInfo, register, getValues, errors}) => {
                     }
                 })}
                 placeholder={placeholder}
-                style={{border: errors[name] && "1px solid rgb(219, 0, 0)"}}
+                style={{border: errors[name] && "1px solid var(--red)"}}
             />
             <span className="error">
                 {

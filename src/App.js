@@ -13,9 +13,9 @@ const App = () => {
         <RegisterProvider>
         <CartProvider>
             <Routes>
-                <Route path="/" element={<Home />} />
                 <Route path="/register" element={<Register />} />
                 <Route path="/cart" element={<Cart />} />
+                <Route path="/" element={<Home />} />
             </Routes>
         </CartProvider>
         </RegisterProvider>

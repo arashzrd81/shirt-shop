@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { HashLink as Link } from "react-router-hash-link";
 import "../assets/styles/Footer.css";
 
 
@@ -16,24 +16,30 @@ const Footer = () => {
                 </div>
                 <nav>
                     <h2>SHIRTS</h2>
-                    <Link to="/">T-Shirt</Link>
-                    <Link to="/">Polo Shirt</Link>
-                    <Link to="/">Hoodie</Link>
-                    <Link to="/">Sweat Shirt</Link>
+                    <Link to="/#shirts">T-Shirt</Link>
+                    <Link to="/#shirts">Polo Shirt</Link>
+                    <Link to="/#shirts">Hoodie</Link>
+                    <Link to="/#shirts">Sweat Shirt</Link>
                 </nav>
                 <nav>
                     <h2>ABOUT</h2>
-                    <Link to="/">Help</Link>
-                    <Link to="/">Contact us</Link>
-                    <Link to="/">Terms</Link>
-                    <Link to="/">Privacy Policy</Link>
+                    <Link to="/#container">Help</Link>
+                    <Link to="/#container">Contact us</Link>
+                    <Link to="/#container">Terms</Link>
+                    <Link to="/#container">Privacy Policy</Link>
                 </nav>
                 <div className="social-media">
                     <h2>SOCIAL MEDIA</h2>
                     <nav>
-                        <Link to="/"><i className="fa-brands fa-instagram"></i></Link>
-                        <Link to="/"><i className="fa-brands fa-telegram"></i></Link>
-                        <Link to="/"><i className="fa-brands fa-x-twitter"></i></Link>
+                        <Link to="/#container">
+                            <i className="fa-brands fa-instagram"></i>
+                        </Link>
+                        <Link to="/#container">
+                            <i className="fa-brands fa-telegram"></i>
+                        </Link>
+                        <Link to="/#container">
+                            <i className="fa-brands fa-x-twitter"></i>
+                        </Link>
                     </nav>
                     <div className="contact-info">
                         <i className="fa-solid fa-phone-volume"></i>

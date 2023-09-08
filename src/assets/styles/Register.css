@@ -28,16 +28,7 @@
 
 #register form input {
     padding: 0.8rem;
-    border: 1px solid var(--dark-gray);
     font-size: 0.85rem;
-}
-
-#register form .error {
-    height: 1rem;
-    padding: 0.3rem;
-    font-size: 0.65rem;
-    font-weight: bold;
-    color: var(--red);
 }
 
 #register form button {

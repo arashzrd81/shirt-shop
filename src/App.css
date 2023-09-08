@@ -11,6 +11,7 @@ html {
     scroll-behavior: smooth;
     --white: white;
     --black: black;
+    --green: green;
     --light-gray: #D9D9D9;
     --dark-gray: #888888;
     --light-blue: #EAF2FF;
@@ -22,6 +23,42 @@ html {
 #container > * > * {
     max-width: 1447px;
     margin: 0 auto;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form .error {
+    height: 1rem;
+    padding: 0.3rem;
+    text-align: left;
+    font-size: 0.65rem;
+    font-weight: bold;
+    color: var(--red);
+}
+
+a,
+button {
+    all: unset;
+    font-weight: 600;
+}
+
+button {
+    height: 45px;
+    border: 2px solid var(--orange);
+    border-radius: 7px;
+    text-align: center;
+    color: var(--white);
+    background-color: var(--orange);
+    transition: 0.3s;
+}
+
+input {
+    border: 1px solid var(--dark-gray);
+    border-radius: 7px;
+    outline: none;
 }
 
 .logo-name,
@@ -61,12 +98,12 @@ html {
     font-weight: bold;
 }
 
-.card .price {
+.card .old-price {
     font-size: 0.9rem;
     text-decoration: line-through;
 }
 
-.card .off-price {
+.card .new-price {
     font-size: 1.1rem;
     color: var(--orange);
 }
@@ -108,32 +145,6 @@ html {
     color: var(--yellow);
 }
 
-form {
-    display: flex;
-    flex-direction: column;
-}
-
-a,
-button {
-    all: unset;
-    font-weight: 600;
-}
-
-button {
-    height: 45px;
-    border: 2px solid var(--orange);
-    border-radius: 7px;
-    text-align: center;
-    color: var(--white);
-    background-color: var(--orange);
-    transition: 0.3s;
-}
-
-input {
-    border-radius: 7px;
-    outline: none;
-}
-
 
 
 /* media queries */
@@ -143,7 +154,7 @@ input {
         font-size: 17px;
     }
     .toast {
-        width: 350px;
+        width: 390px;
         text-align: left;
     }
 }

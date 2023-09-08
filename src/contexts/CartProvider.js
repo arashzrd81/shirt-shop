@@ -5,16 +5,17 @@ const initialState = {
     selectedShirts: [],
     shirtsCount: 0,
     totalPurchase: 0,
+    discountRatio: 1,
     checkout: false
 };
 
-const calculator = (selectedShirts) => {
+const calculator = (selectedShirts, discountRatio) => {
     const shirtsCount = selectedShirts.reduce(
         (total, shirt) => total + shirt.quantity, 0
     );
     const totalPurchase = selectedShirts.reduce(
-        (total, shirt) => total + shirt.quantity * shirt.offPrice, 0
-    ).toFixed(2);
+        (total, shirt) => total + shirt.quantity * shirt.price * discountRatio, 0
+    );
     return {shirtsCount, totalPurchase};
 };
 
@@ -29,7 +30,7 @@ const cartReducer = (state, action) => {
             return {
                 ...state,
                 selectedShirts: state.selectedShirts,
-                ...calculator(state.selectedShirts),
+                ...calculator(state.selectedShirts, state.discountRatio),
                 checkout: false
             };
         case "INCREASE":
@@ -39,7 +40,7 @@ const cartReducer = (state, action) => {
             state.selectedShirts[indexI].quantity++;
             return {
                 ...state,
-                ...calculator(state.selectedShirts)
+                ...calculator(state.selectedShirts, state.discountRatio)
             };
         case "DECREASE":
             const indexD = state.selectedShirts.findIndex(
@@ -52,20 +53,27 @@ const cartReducer = (state, action) => {
                 return {
                     ...state,
                     selectedShirts: newSelectedShirts,
-                    ...calculator(newSelectedShirts)
+                    ...calculator(newSelectedShirts, state.discountRatio)
                 };
             } else {
                 state.selectedShirts[indexD].quantity--;
                 return {
                     ...state,
-                    ...calculator(state.selectedShirts)
+                    ...calculator(state.selectedShirts, state.discountRatio)
                 };
+            }
+        case "DISCOUNTED":
+            return {
+                ...state,
+                ...calculator(state.selectedShirts, 0.8),
+                discountRatio: 0.8
             }
         case "CHECKOUT":
             return {
                 selectedShirts: [],
                 shirtsCount: 0,
                 totalPurchase: 0,
+                discountRatio: state.discountRatio,
                 checkout: true
             };
         default:

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { HashLink as Link } from "react-router-hash-link";
 import TextTransition, { presets } from "react-text-transition";
 import "../assets/styles/Hero.css";
 
@@ -10,8 +11,8 @@ const Hero = () => {
     const [index, setIndex] = useState(0);
 
     useEffect(() => {
-        const intervalId = setInterval(() =>
-            setIndex((index) => index + 1), 1500
+        const intervalId = setInterval(
+            () => setIndex((index) => index + 1), 1500
         );
         return () => clearTimeout(intervalId);
     }, []);
@@ -29,9 +30,9 @@ const Hero = () => {
                     </h1>
                     <p>Brand day flat 20% off and free shipping</p>
                     <div className="info">
-                        <a href="#shirts">
+                        <Link to="/#shirts">
                             <button className="shop-now-btn">Shop Now</button>
-                        </a>
+                        </Link>
                         <div className="contact-info">
                             <i className="fa-solid fa-phone-volume"></i>
                             <span className="phone-number">+(00)-000-000-0000</span>

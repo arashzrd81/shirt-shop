@@ -10,9 +10,13 @@
     display: none;
 }
 
-#discount .subscribe {
+#discount .subscribe,
+#discount form .input-error {
     display: flex;
     flex-direction: column;
+}
+
+#discount .subscribe {
     row-gap: 1.3rem;
 }
 
@@ -33,21 +37,37 @@
     font-size: 2rem;
 }
 
-#discount .subscribe form {
-    row-gap: 0.8rem;
+#discount .subscribe form,
+#discount .subscribe .applied-discount {
+    height: 125px;
+    align-items: center;
 }
 
-#discount form * {
-    align-self: center;
+#discount .subscribe form {
+    row-gap: 0.5rem;
+}
+
+#discount form > * {
     width: 250px;
 }
 
 #discount form input {
     padding: 0.88rem;
-    border: 2px solid var(--white);
     text-align: left;
     background-color: var(--white);
-    box-shadow: 0 0 10px var(--dark-gray);
+}
+
+#discount .subscribe .applied-discount {
+    display: flex;
+    justify-content: center;
+    column-gap: 0.5rem;
+    font-weight: bold;
+    color: var(--green);
+    text-shadow: 0 0 1.5px var(--green);
+}
+
+#discount .applied-discount .fa-tag {
+    font-size: 1.2rem;
 }
 
 
@@ -55,18 +75,26 @@
 /* media queries */
 
 @media screen and (min-width: 768px) {
+    #discount .subscribe :nth-child(4) {
+        height: 60px;
+    }
     #discount .subscribe form {
         flex-direction: row;
         justify-content: center;
+        align-items: flex-start;
         column-gap: 1rem;
     }
-    #discount form input {
+    #discount form .input-error {
         width: 360px;
+    }
+    #discount form input {
+        width: 100%;
         padding: 0.7rem;
     }
     #discount form .subscribe-btn {
         width: 150px;
-        height: 2.55rem;
+        height: 2.5rem;
+        margin-top: -1px;
     }
 }
 
@@ -88,7 +116,8 @@
     #discount .subscribe {
         width: 54%;
     }
-    #discount .subscribe form {
+    #discount .subscribe form,
+    #discount .subscribe .applied-discount {
         justify-content: flex-start;
     }
 }
